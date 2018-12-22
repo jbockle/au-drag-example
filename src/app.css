@@ -1,0 +1,23 @@
+item-list {
+  width: 100px;
+}
+
+item span {
+  width: 100%;
+  border: 1px solid black;
+  background: rgb(109, 129, 218);
+  padding: 3px;
+  margin: 1px;
+}
+
+item dragzone {
+  width: 100%;
+  height: 3px;
+  margin-top: 1px;
+  margin-bottom: 3px;
+  border: none;
+}
+
+item-list.dragging item dragzone {
+  border-bottom: 1px dotted black;
+}

@@ -1,0 +1,15 @@
+<template>
+  <require from="./app.css"></require>
+  <require from="bootstrap/dist/css/bootstrap.css"></require>
+  <div class="m-3">
+    <item-list class="d-flex flex-column" ref="list">
+      <item repeat.for="item of items" class="d-flex flex-column">
+        <span class="m-auto flex-fill" draggable="true" drag.delegate="drag(item)"
+              dragend.delegate="drop()">
+          ${item.name}
+        </span>
+        <dragzone dragover.delegate="dragover($index)"></dragzone>
+      </item>
+    </item-list>
+  </div>
+</template>
