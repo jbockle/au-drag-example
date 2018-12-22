@@ -12,12 +12,13 @@ item span {
 
 item dragzone {
   width: 100%;
-  height: 3px;
-  margin-top: 1px;
-  margin-bottom: 3px;
+  height: 5px;
+  margin: 1px 0;
   border: none;
+  background: yellow;
 }
 
 item-list.dragging item dragzone {
-  border-bottom: 1px dotted black;
+  border: 1px dotted black;
+  background: yellow;
 }

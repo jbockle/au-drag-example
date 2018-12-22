@@ -1,5 +1,4 @@
 interface Item {
-  id: string,
   name: string
 }
 
@@ -9,16 +8,13 @@ export class App {
   itemDraggedTo: number;
   itemDragged: Item;
 
-  items: Item[] = [
-    { id: 'cat', name: 'cat' },
-    { id: 'dog', name: 'dog' },
-    { id: 'mouse', name: 'mouse' },
-    { id: 'rat', name: 'rat' },
-    { id: 'hamster', name: 'hamster' },
-    { id: 'bird', name: 'bird' },
-    { id: 'lion', name: 'lion' },
-    { id: 'snake', name: 'snake' },
-  ];
+  items: Item[] = []
+
+  constructor() {
+    for (let i = 0; i < 10; i++) {
+      this.items.push({ name: `${i}` });
+    }
+  }
 
   drag(item: Item) {
     this.itemDragged = item;
@@ -41,6 +37,9 @@ export class App {
     this.itemDraggedTo = index;
     this.itemDraggedFrom = this.items.indexOf(this.itemDragged);
     if (this.itemDraggedFrom !== this.itemDraggedTo) {
+      if (this.itemDraggedFrom < this.itemDraggedTo) {
+        this.itemDraggedTo--;
+      }
       return false;
     }
     return true;

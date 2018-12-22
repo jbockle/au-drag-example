@@ -4,11 +4,13 @@
   <div class="m-3">
     <item-list class="d-flex flex-column" ref="list">
       <item repeat.for="item of items" class="d-flex flex-column">
+        <dragzone dragover.delegate="dragover($index)" if.bind="$index !== 0"></dragzone>
         <span class="m-auto flex-fill" draggable="true" drag.delegate="drag(item)"
               dragend.delegate="drop()">
           ${item.name}
         </span>
-        <dragzone dragover.delegate="dragover($index)"></dragzone>
+
+        <!-- <dragzone dragover.delegate="dragover($index+1)" if.bind="$index+1 < items.length"></dragzone> -->
       </item>
     </item-list>
   </div>
